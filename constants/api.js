@@ -1,5 +1,5 @@
 const ip1 = "http://10.2.101.113:8089"
-const ip2 = "http://192.168.1.36:8089"
+const ip2 = "http://192.168.129.10:8089"
 
 const host = ip2
 

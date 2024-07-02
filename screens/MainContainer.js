@@ -2,6 +2,8 @@ import * as React from 'react';
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {Ionicons} from "@expo/vector-icons";
 import COLORS from "../constants/colors";
+import {Platform as Plateform} from "expo-modules-core/src";
+
 
 // Screens
 import Clients from "./logged/Clients";
@@ -9,6 +11,7 @@ import Company from "./logged/Company";
 import Others from "./logged/Others";
 import Reminder from "./logged/Reminder";
 import Settings from "./logged/Settings";
+import {StyleSheet} from "react-native";
 
 // Screens name
 const clientsName = 'Clients';
@@ -22,6 +25,7 @@ const Tab = createBottomTabNavigator();
 function TabNavigator() {
     return (
         <Tab.Navigator
+
             initialRouteName={clientsName}
             screenOptions={({route}) => ({
                 tabBarIcon: ({focused, color, size}) => {
@@ -44,8 +48,14 @@ function TabNavigator() {
                 },
                 tabBarActiveTintColor: COLORS.primary,
                 tabBarInactiveTintColor: "grey",
-                tabBarLabelStyle: {paddingBottom: 10, fontSize: 12},
-                tabBarStyle: {padding: 0, height: 70}
+                tabBarLabelStyle: {
+                    paddingBottom: Plateform.OS === "ios" ? 0 : 10,
+                    fontSize: 12},
+                tabBarStyle: {
+                    // backgroundColor: COLORS.grey,
+                    padding: Plateform.OS === "ios" ? 0 : 0,
+                    height: Plateform.OS === "ios" ? 90 : 70
+                },
             })}
         >
             <Tab.Screen name={clientsName} component={Clients}/>

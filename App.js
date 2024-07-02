@@ -10,6 +10,7 @@ import MyCompanies from "./screens/logged/companies/MyCompanies";
 import EditMyCompany from "./screens/logged/companies/EditMyCompany";
 import GenerateReport from "./screens/logged/companies/GenerateReport";
 import {AuthProvider} from "./screens/auth/AuthContext";
+import CreateMyCompany from "./screens/logged/companies/CreateCompany";
 
 const Stack = createNativeStackNavigator();
 
@@ -86,6 +87,12 @@ export default function App() {
                            headerTitle: "View/Edit my company"
                        }}
                    />
+                   <Stack.Screen
+                       name="CreateMyCompany"
+                       component={CreateMyCompany}
+                       options={{
+                           headerTitle: "Create Company"
+                   }} />
                    <Stack.Screen
                        name="GenerateReport"
                        component={GenerateReport}

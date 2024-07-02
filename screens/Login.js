@@ -42,6 +42,7 @@ const Login = ({navigation}) => {
             const userData = response.data;
             console.log(response.data);
             setAuthenticatedUser(userData);
+
         } catch (error) {
             // console.error(error)
             if (!error.response) {

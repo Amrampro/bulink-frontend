@@ -136,7 +136,7 @@ const MyCompanies = ({ navigation }) => {
             {loading ? (
                 ''
             ) : (
-                <TouchableOpacity onPress={() => navigation.navigate('ContactAdd')} style={styles.addNewElement}>
+                <TouchableOpacity onPress={() => navigation.navigate('CreateMyCompany')} style={styles.addNewElement}>
                     <Image style={styles.floatingButton} source={require('../../../assets/imgs/add.png')} />
                 </TouchableOpacity>
             )}
